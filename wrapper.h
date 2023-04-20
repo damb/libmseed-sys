@@ -1,3 +1,4 @@
 #include <stddef.h>
 #include <stdio.h>
-#include "libmseed.h"
+
+#include "vendor/libmseed.h"
