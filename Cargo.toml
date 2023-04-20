@@ -19,5 +19,5 @@ links = "mseed"
 
 [build-dependencies]
 git2 = "0.13"
-bindgen = "0.58.1"
+bindgen = "0.65.1"
 
