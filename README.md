@@ -1,7 +1,7 @@
 libmseed-sys
 ===============
 
-sys-crate for the miniseed library (libmssed) https://github.com/iris-edu/libmseed
+sys-crate for the miniseed library (libmseed) https://github.com/iris-edu/libmseed
 
 This version only support version 3.x of libmseed.  If you require version 2.x support, please see https://github.com/savage13/miniseed-rs.
 
