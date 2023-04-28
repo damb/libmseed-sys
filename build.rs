@@ -45,6 +45,7 @@ fn main() {
         .allowlist_var("HPT.*")
         .allowlist_var("DE_.*")
         .allowlist_var("MSF_.*")
+        .allowlist_var("NSTERROR")
         .allowlist_function("ms_.*")
         .allowlist_function("msr_.*")
         .allowlist_function("ms3_.*")
