@@ -1,18 +1,15 @@
-libmseed-sys
-===============
+# libmseed-sys (fork)
 
-[sys-crate](https://kornel.ski/rust-sys-crate) for the miniseed library ([libmseed](https://github.com/EarthScope/libmseed)).
+> **NOTE**: This fork was created since the
+> [original crate](https://github.com/savage13/libmseed-sys) was abondoned (see
+> also the discussion [here](https://github.com/savage13/miniseed/issues/3)).
 
-This version only support version 3.x of libmseed.  If you require version 2.x support, please see https://github.com/savage13/miniseed-rs.
+[sys-crate](https://kornel.ski/rust-sys-crate) for the miniSEED library
+([libmseed]).
 
-For information about the data formats, see:
+Note that this version only supports version 3.x of [libmseed].
 
-- MiniSEED: http://ds.iris.edu/ds/nodes/dmc/data/formats/miniseed/
-- SEED: http://ds.iris.edu/ds/nodes/dmc/data/formats/seed/
+For further information about the data format, please refer to the [SEED
+reference manual](http://fdsn.org/pdf/SEEDManual_V2.4.pdf).
 
-### Usage
-
-This crate is not to be used directly, but by other crates.
-
-See https://github.com/savage13/miniseed for a more usable solution
-
+[libmseed]: https://github.com/EarthScope/libmseed
