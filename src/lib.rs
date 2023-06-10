@@ -6,10 +6,9 @@ include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
 
 #[cfg(test)]
 mod tests {
-    use std::ptr;
-    //use std::os::raw;
     use std::ffi::CStr;
     use std::ffi::CString;
+    use std::ptr;
 
     use super::*;
 
@@ -44,8 +43,8 @@ mod tests {
         assert_eq!(ms.crc, 0);
         assert_eq!(ms.extralength, 33);
         assert_eq!(ms.datalength, 448);
-        assert!(ms.extra != ptr::null_mut());
-        assert!(ms.datasamples != ptr::null_mut());
+        assert!(!ms.extra.is_null());
+        assert!(!ms.datasamples.is_null());
         assert_eq!(ms.datasize, 419 * 4);
         assert_eq!(ms.numsamples, 419);
         assert_eq!(ms.sampletype, 'i' as std::os::raw::c_char);
@@ -72,8 +71,8 @@ mod tests {
         assert_eq!(ms.crc, 0);
         assert_eq!(ms.extralength, 33);
         assert_eq!(ms.datalength, 448);
-        assert!(ms.extra != ptr::null_mut());
-        assert!(ms.datasamples != ptr::null_mut());
+        assert!(!ms.extra.is_null());
+        assert!(!ms.datasamples.is_null());
         assert_eq!(ms.datasize, 368 * 4);
         assert_eq!(ms.numsamples, 368);
         assert_eq!(ms.sampletype, 'i' as std::os::raw::c_char);
