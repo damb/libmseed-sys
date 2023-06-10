@@ -18,8 +18,6 @@ mod tests {
         let mut fp: *mut MS3FileParam = ptr::null_mut();
         let mut msr: *mut MS3Record = unsafe { msr3_init(ptr::null_mut()) };
 
-        let mut fpos: i64 = 0;
-        let mut last: i8 = 0;
         let flags: u32 = MSF_UNPACKDATA;
         let verbose: i8 = 0;
         let mspath = CString::new("tests/multiple.seed").unwrap();
@@ -29,8 +27,6 @@ mod tests {
                 (&mut fp) as *mut *mut MS3FileParam,
                 (&mut msr) as *mut *mut MS3Record,
                 mspath.as_ptr(),
-                &mut fpos,
-                &mut last,
                 flags,
                 verbose,
             )
@@ -38,8 +34,6 @@ mod tests {
         assert_eq!(rv, MS_NOERROR as i32);
         let ms = unsafe { *msr };
         assert_eq!(ms.reclen, 512);
-        assert_eq!(fpos, 0);
-        assert_eq!(last, 0);
         let sid = unsafe { CStr::from_ptr(ms.sid.as_ptr()) }.to_str().unwrap();
         assert_eq!(sid, "FDSN:IU_ANMO_00_B_H_Z");
         assert_eq!(ms.starttime, 1267252200019538000);
@@ -61,8 +55,6 @@ mod tests {
                 (&mut fp) as *mut *mut MS3FileParam,
                 (&mut msr) as *mut *mut MS3Record,
                 mspath.as_ptr(),
-                &mut fpos,
-                &mut last,
                 flags,
                 verbose,
             )
@@ -70,8 +62,6 @@ mod tests {
         assert_eq!(rv, MS_NOERROR as i32);
         let ms = unsafe { *msr };
         assert_eq!(ms.reclen, 512);
-        assert_eq!(fpos, 512);
-        assert_eq!(last, 0);
         let sid = unsafe { CStr::from_ptr(ms.sid.as_ptr()) }.to_str().unwrap();
         assert_eq!(sid, "FDSN:IU_ANMO_00_B_H_Z");
         assert_eq!(ms.starttime, 1267252220969538000);
