@@ -58,6 +58,7 @@ mod tests {
                 verbose,
             )
         };
+
         assert_eq!(rv, MS_NOERROR as i32);
         let ms = unsafe { *msr };
         assert_eq!(ms.reclen, 512);
@@ -76,5 +77,15 @@ mod tests {
         assert_eq!(ms.datasize, 368 * 4);
         assert_eq!(ms.numsamples, 368);
         assert_eq!(ms.sampletype, 'i' as std::os::raw::c_char);
+
+        unsafe {
+            ms3_readmsr_r(
+                (&mut fp) as *mut *mut MS3FileParam,
+                (&mut msr) as *mut *mut MS3Record,
+                ptr::null(),
+                flags,
+                verbose,
+            );
+        }
     }
 }
