@@ -1,5 +1,9 @@
 # libmseed-sys (fork)
 
+> **WARNING**: This repository has been archived due to integration of the sys
+> crate into https://github.com/damb/mseed.
+
+
 > **NOTE**: This fork was created since the
 > [original crate](https://github.com/savage13/libmseed-sys) was abandoned (see
 > also the discussion [here](https://github.com/savage13/miniseed/issues/3)).
